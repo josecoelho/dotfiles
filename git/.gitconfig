@@ -1,0 +1,15 @@
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+
+[color]
+	ui = auto
+
+# Per-machine signing config (and any personal-identity routing) lives
+# in ~/.gitconfig.local — created by the host (laptop with GPG, dev
+# container with SSH signing). Keeps the base gitconfig portable across
+# machines.
+[include]
+	path = ~/.gitconfig.local
