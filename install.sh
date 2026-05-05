@@ -104,7 +104,7 @@ echo "  - Create ~/.gitconfig.local with your signing config:"
 echo "      [commit] gpgsign = true"
 echo "      [user]   signingkey = <your fingerprint or SSH pubkey path>"
 echo "  - tmux: prefix + I to install plugins (TPM)"
-[[ -z "${DOTFILES_CONTAINER:-}" ]] && {
+if [[ -z "${DOTFILES_CONTAINER:-}" ]]; then
   echo "  - Restart your shell, or 'source ~/.zshrc'"
   echo "  - Tailscale: 'sudo tailscale up' to connect"
-}
+fi
