@@ -23,7 +23,9 @@ if [[ -z "${DOTFILES_CONTAINER:-}" ]]; then
   if [[ "$OSTYPE" == "darwin"* ]]; then
     OS="macos"
   elif [[ -f /etc/debian_version ]]; then
-    OS="ubuntu"
+    OS="ubuntu "
+    echo "Detected Ubuntu, updating apt..."
+    sudo apt-get update
   else
     echo "Unsupported OS for package installs. Will still run stow." >&2
     OS="unknown"
@@ -41,7 +43,6 @@ if [[ -z "${DOTFILES_CONTAINER:-}" ]]; then
       }
       brew install "$brew_name"
     elif [[ "$OS" == "ubuntu" ]]; then
-      sudo apt-get update
       sudo apt-get install -y "$package"
     fi
   }
