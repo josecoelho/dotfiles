@@ -1,13 +1,4 @@
 return {
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    opts = {
-      file_types = { "markdown", "Avante" },
-      code = { enabled = true },
-    },
-    ft = { "markdown", "Avante" },
-  },
-
   -- Auto-fix code on save
   {
     "stevearc/conform.nvim",
