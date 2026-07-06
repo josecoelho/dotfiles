@@ -61,6 +61,10 @@ if [[ -z "${DOTFILES_CONTAINER:-}" ]]; then
   install_package neovim
   install_package ripgrep
   install_package urlview
+  # Modern bash (5.x). macOS ships bash 3.2, which lacks associative arrays
+  # and breaks scripts like the tokyo-night-tmux theme (whole status bar
+  # renders in one colour). brew shellenv in .zshrc puts it ahead of /bin.
+  install_package bash
 
   # mise
   if ! command -v mise >/dev/null 2>&1; then
